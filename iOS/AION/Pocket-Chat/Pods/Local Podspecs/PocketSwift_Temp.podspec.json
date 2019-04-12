@@ -1,0 +1,61 @@
+{
+  "name": "PocketSwift",
+  "version": "0.0.1",
+  "summary": "A short description of PocketSwift.",
+  "homepage": "https://github.com/wgarcia4190/BlockchainSwift",
+  "license": {
+    "type": "MIT"
+  },
+  "authors": {
+    "Wilson Garcia": "wilson@pokt.network"
+  },
+  "source": {
+    "git": "https://github.com/pokt-network/pocket-swift.git",
+    "branch": "pocket-swift-0.01"
+  },
+  "source_files": "PocketSwift/PocketSwift/**/*.{h,m,swift}",
+  "exclude_files": [
+    "PocketSwift/PocketSwiftTests/**/*.{h,m,swift}",
+    "PocketSwift/Pods/*"
+  ],
+  "swift_version": "4.2",
+  "cocoapods_version": ">= 1.4.0",
+  "platforms": {
+    "ios": "11.0"
+  },
+  "dependencies": {
+    "RxSwift": [
+      "~> 4.0"
+    ],
+    "RxBlocking": [
+      "~> 4.0"
+    ],
+    "BigInt": [
+
+    ]
+  },
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "PocketSwift/PocketSwift/Packages/Core/**/*.{h,m,swift}"
+    },
+    {
+      "name": "Eth",
+      "source_files": "PocketSwift/PocketSwift/Packages/Eth/**/*.{h,m,swift}",
+      "dependencies": {
+        "PocketSwift/Core": [
+
+        ]
+      }
+    },
+    {
+      "name": "Aion",
+      "source_files": "PocketSwift/PocketSwift/Packages/Aion/**/*.{h,m,swift}",
+      "dependencies": {
+        "PocketSwift/Core": [
+
+        ]
+      }
+    }
+  ]
+}

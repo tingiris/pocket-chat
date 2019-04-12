@@ -1,0 +1,23 @@
+PODS:
+  - MessageInputBar (0.4.1):
+    - MessageInputBar/Core (= 0.4.1)
+  - MessageInputBar/Core (0.4.1)
+  - MessageKit (2.0.0):
+    - MessageInputBar/Core
+
+DEPENDENCIES:
+  - MessageInputBar
+  - MessageKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MessageInputBar
+    - MessageKit
+
+SPEC CHECKSUMS:
+  MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
+  MessageKit: 29c1c87e5a396d2ca7a3f712e5171dc9aba42a1e
+
+PODFILE CHECKSUM: cc701d8388289befbeb4cc157ee0995d12d9fc89
+
+COCOAPODS: 1.5.3
