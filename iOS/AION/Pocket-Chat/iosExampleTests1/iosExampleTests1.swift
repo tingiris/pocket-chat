@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import PocketSwift
 
 class iosExampleTests1: XCTestCase {
 
@@ -28,6 +29,24 @@ class iosExampleTests1: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testWallet(){
+        
+        let pocketAion = try? PocketAion.init(devID: "DEV111", netIds: ["32","356"], defaultNetID: "32", maxNodes: 5, requestTimeOut: 20000)
+    
+        do {
+         
+            let wallet = try?pocketAion!.mastery!.createWallet()
+            print(wallet?.address)
+        } catch {
+            print(error)
+        }
+       
+        
+       
+        
+        
     }
 
 }

@@ -8,21 +8,18 @@
 
 import UIKit
 import CoreData
-import Pocket
-import PocketAion
-import PocketEth
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, Configuration {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    public var nodeURL: URL { get { return URL.init(string: "https://aion.pokt.network")! } }
+  
     
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        Pocket.shared.setConfiguration(config: self)
+       
         return true
     }
 

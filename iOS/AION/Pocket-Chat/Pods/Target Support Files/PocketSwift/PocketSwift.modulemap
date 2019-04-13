@@ -1,0 +1,6 @@
+framework module PocketSwift {
+  umbrella header "PocketSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

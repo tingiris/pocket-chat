@@ -64,29 +64,7 @@ class MessageVC: MessagesViewController {
             "Data":userInput
             ] as [AnyHashable:Any]
         
-        let txParams = [
-            "from": user1_Pub,
-            "nonce": BigUInt.init(0),
-            "to": contractAddress,
-            "value": BigUInt.init(0),
-            "gasLimit": BigUInt.init(2000000),
-            "gasPrice": BigUInt.init(1000000000),
-            "data": [
-                "abi": functionABI,
-                "params": contractParams
-                ] as [AnyHashable: Any]
-            ] as [AnyHashable: Any]
-        
-        do {
-            //let transaction = try? PocketEth.createTransaction(wallet: nil, params: txParams)
-            
-            //Pocket.shared.sendTransaction(transaction: transaction, handler: nil)
-            
-            
-        }catch {
-           print("error")
-        }
-        
+    
     }
 
     
@@ -95,40 +73,14 @@ class MessageVC: MessagesViewController {
 
         let address = "0xa0510dd236472e90f0ff4f6b7b4f70b1d8c5206cf303839f9a4e8fa6af0dd420"
         let privateKey = "0xd0c6208eb958998dcdac23bedf7d58d863c5abe64e250e4e379a4efd3966cd99e5cab1be5be1655abc987ff7321a438581778919b859370cf1faa22346b201fc"
+        // let nonce = BigInt.init(13)
+         let to =  "0xa0d969df9232b45239b577c3790887081b5a22ffd5a46a8d82584ee560485624"
+     
         
-        let nonce = BigInt.init(13)
-        let to =  "0xa0d969df9232b45239b577c3790887081b5a22ffd5a46a8d82584ee560485624"
-        let value =  BigInt.init(10000)
-        let nrgPrice = BigInt.init(10000000000)
-        let nrg = BigInt.init(21000)
+    
+            
+            
         
-        do {
-            
-            
-            let importWallet = try PocketAion.importWallet(privateKey: privateKey, subnetwork: "32", address: address, data: nil)
-            
-            try PocketAion.eth.sendTransaction(wallet: importWallet, nonce: nonce, to: to, data: "", value: value, nrgPrice: nrgPrice, nrg: nrg, handler: { (result, error) in
-                
-                if error != nil {
-                    print(error!)
-                    return
-                } else {
-                    
-                    print("the hash:", result!)
-                    DispatchQueue.main.async {
-                        let alert = UIAlertController(title: "Success", message: "you have Sucessfully sent \(value) AMP. The hash is\(result!)", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: .default))
-                        
-                        self.present(alert, animated: true, completion: nil)
-                    }
-
-                }
-                
-            })
-            
-        } catch{
-            print(error)
-        }
         
     }
     

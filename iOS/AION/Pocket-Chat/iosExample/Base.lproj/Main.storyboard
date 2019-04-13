@@ -85,7 +85,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create a New Wallet"/>
                                 <connections>
-                                    <action selector="createWalletButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j0r-nZ-pY9"/>
+                                    <action selector="createWalletButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dc9-2J-TjC"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5fc239d9f12299cf910786840fc8779d771a12fbd69bd2a036a84b3a7996035" borderStyle="roundedRect" placeholder="Enter Private Key" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QQa-p3-UOE">
@@ -120,22 +120,15 @@
             </objects>
             <point key="canvasLocation" x="56.799999999999997" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Create WalletVC-->
         <scene sceneID="gDA-I8-mbN">
             <objects>
-                <viewController id="dRG-qT-ffn" sceneMemberID="viewController">
+                <viewController id="dRG-qT-ffn" customClass="CreateWalletVC" customModule="iosExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YxB-B1-Iov">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Public_key" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvK-oL-N1m">
-                                <rect key="frame" x="49" y="248" width="292" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Private_key" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHW-YI-Vjg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Private_key" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHW-YI-Vjg">
                                 <rect key="frame" x="49" y="361" width="292" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -147,6 +140,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
+                                    <action selector="continueToMVC:" destination="dRG-qT-ffn" eventType="touchUpInside" id="ozc-C7-fxY"/>
+                                    <action selector="continueToMVC:" destination="v2X-oV-Xjz" eventType="touchUpInside" id="u9l-6q-efD"/>
                                     <action selector="createWalletButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ej8-VI-vRb"/>
                                     <action selector="tapContinue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dIy-oa-5aD"/>
                                 </connections>
@@ -169,6 +164,10 @@
                                 <rect key="frame" x="119" y="495" width="153" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back to Import Screen"/>
+                                <connections>
+                                    <action selector="backToImport:" destination="v2X-oV-Xjz" eventType="touchUpInside" id="AfL-Hk-q6o"/>
+                                    <action selector="backToImport:" destination="dRG-qT-ffn" eventType="touchUpInside" id="dIm-u4-fQN"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Make sure you store your private key in a safe place. Your new wallet is:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZ9-55-3rg">
                                 <rect key="frame" x="83" y="96" width="230" height="77"/>
@@ -177,16 +176,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Public_key" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfo-lS-M4i">
+                                <rect key="frame" x="41" y="254" width="292" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="UZS-42-AMN"/>
                     </view>
                     <connections>
+                        <outlet property="priv_KeyL" destination="hHW-YI-Vjg" id="Vqa-mI-Aea"/>
+                        <outlet property="pub_KeyL" destination="pfo-lS-M4i" id="oV9-ME-hFF"/>
                         <segue destination="xce-G0-4yT" kind="presentation" identifier="toMessage" id="KGX-8x-Whx"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="backToImport" id="aYu-Yy-f64"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kuR-jL-gKZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="v2X-oV-Xjz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="56.799999999999997" y="870.31484257871068"/>
         </scene>

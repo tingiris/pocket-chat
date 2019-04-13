@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import PocketEth
-import PocketAion
 
 
 class ViewController: UIViewController {
@@ -47,36 +45,21 @@ class ViewController: UIViewController {
             //TODO add import wallet feature here
                 
             performSegue(withIdentifier: "toMessage", sender: self)
-        
-           
-           
-            
-        
-            print("error")
-            
-            
-            DispatchQueue.main.async {
-                let alert = UIAlertController(title: "Error", message: "Failed to Import wallet \(error) AMP. The hash is", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default))
-                
-                self.present(alert, animated: true, completion: nil)
-            }
-            
-        
-       
-    }
-   
-    @IBAction func createWalletButton(_ sender: Any) {
-        
-        //TODO connect to CreateWalletVC
-      
-    }
-    
-    
+
     
     // address 0xB0fEE26f7671Be33ab5C2eCB82208123535FFAc3
     // pk 5fc239d9f12299cf910786840fc8779d771a12fbd69bd2a036a84b3a79960354
 
 
-}
+ }
+    
+    @IBAction func createWalletButton(_ sender: Any) {
+        
+        performSegue(withIdentifier: "toWalletVC", sender: self)
+        
+    }
+    
+    
+    
 
+}

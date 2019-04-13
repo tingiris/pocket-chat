@@ -1,23 +1,64 @@
 PODS:
+  - BigInt (3.1.0):
+    - SipHash (~> 1.2)
   - MessageInputBar (0.4.1):
     - MessageInputBar/Core (= 0.4.1)
   - MessageInputBar/Core (0.4.1)
   - MessageKit (2.0.0):
     - MessageInputBar/Core
+  - PocketSwift/Aion (0.0.1):
+    - BigInt
+    - PocketSwift/Core
+  - PocketSwift/Core (0.0.1):
+    - BigInt
+    - RNCryptor
+    - RxBlocking (~> 4.0)
+    - RxSwift (~> 4.0)
+    - SwiftKeychainWrapper
+  - RNCryptor (5.0.3)
+  - RxBlocking (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxSwift (4.5.0)
+  - SipHash (1.2.2)
+  - SwiftKeychainWrapper (3.2.0)
 
 DEPENDENCIES:
   - MessageInputBar
   - MessageKit
+  - PocketSwift/Aion (from `https://github.com/pokt-network/pocket-swift.git`, branch `master`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - BigInt
     - MessageInputBar
     - MessageKit
+    - RNCryptor
+    - RxBlocking
+    - RxSwift
+    - SipHash
+    - SwiftKeychainWrapper
+
+EXTERNAL SOURCES:
+  PocketSwift:
+    :branch: master
+    :git: https://github.com/pokt-network/pocket-swift.git
+
+CHECKOUT OPTIONS:
+  PocketSwift:
+    :commit: 2ceadff181529b98038cad7cbda4021c1438a206
+    :git: https://github.com/pokt-network/pocket-swift.git
 
 SPEC CHECKSUMS:
+  BigInt: 76b5dfdfa3e2e478d4ffdf161aeede5502e2742f
   MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
   MessageKit: 29c1c87e5a396d2ca7a3f712e5171dc9aba42a1e
+  PocketSwift: 7936a6e810a4db03468756cbc6fb0a519a32a284
+  RNCryptor: c93d19029dcf7ff160aca0f24d6c9e7b0d82f664
+  RxBlocking: 79413e4d916f44bb3e113c5b2cc059e36fe58910
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
+  SwiftKeychainWrapper: 82c4c02cdc36f9a24f7edfcaab3e336401caa1a1
 
-PODFILE CHECKSUM: cc701d8388289befbeb4cc157ee0995d12d9fc89
+PODFILE CHECKSUM: ca39c0d9fd520b06be37f9b91c09b60393a65bc9
 
 COCOAPODS: 1.5.3

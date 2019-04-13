@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import PocketEth
 import BigInt
 
 
